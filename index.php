@@ -1,4 +1,10 @@
 <?php
+$input = array("red", "green", "blue", "yellow");
+$splice = array_splice($input, 1,2);
+print_r($input);
+
+
+
 include_once 'connect.php';
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST)){
 	
@@ -89,7 +95,8 @@ if (mysqli_query($conn, $sql)) {
 				<input type="radio" value="Active" name='product_status' checked>
 				<input type="radio" value="Deactive" name='product_status'>
 			</div>
-			<div><input type="submit" value="Submit"></div>
+			<div><input type="submit" value="Submit"> <input type="button" id="show_all" value="Show all items"></div>
+			<div></div>
 		</form>
 	</body>
 </html>
